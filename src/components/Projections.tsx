@@ -124,7 +124,9 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                 position: 'bottom' as const,
                 labels: {
                     color: '#fff',
-                    font: { size: 10 }
+                    font: { size: 10 },
+                    // usePointStyle: true,
+                    // pointStyle: 'line',
                 }
             },
             tooltip: {
@@ -170,7 +172,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
 
             <div className="projection-controls d-flex flex-column align-items-center gap-2 mt-2">
                 <div className="d-flex gap-3 justify-content-center flex-wrap" style={{ fontSize: '0.85rem', color: '#888' }}>
-                    <span style={{ fontWeight: 600 }}>Monthly Inflation (YoY Base):</span>
+                    <span >Monthly Inflation (YoY Base):</span>
                     <span>RAM <span className="text-blue">{ram_inf.toFixed(2)}%</span></span>
                     <span>EMMC <span className="text-blue">{emmc_inf ? `${emmc_inf.toFixed(2)}%` : 'N/A'}</span></span>
                     {breakdown_result.map(m => (
@@ -212,7 +214,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                     </div>
 
                     <div className="control-group d-flex align-items-center gap-2">
-                        <span className="filter-label">BOM (Other)</span>
+                        <span className="filter-label">Residual</span>
                         <InputGroup size="sm" style={{ width: '110px' }}>
                             <Button variant="outline-secondary" size="sm" onClick={() => adjustDelta('bom', -0.5)}>-</Button>
                             <Form.Control

@@ -15,7 +15,7 @@ const Overview: React.FC = () => {
 
 
                 <div className="mt-5">
-                    <p className="footer-hint">Geometric mean is used to calculate the monthly inflation values from the selected Year-over-Year (YoY) period.</p>
+                    <p className="footer-hint">The geometric mean is used to de-compound the monthly inflation values from the selected Year-over-Year (YoY) period.</p>
                     <p className="footer-hint">To manually adjust the monthly inflation values used for projections, use the controls above.</p>
                 </div>
             </Container>
