@@ -59,7 +59,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
             '#9966ff', '#c9cbcf', '#36a2eb', '#ff6384', '#4bc0c0'
         ];
 
-        console.log('--- Projection Calculations (Monthly Scale) Start ---');
+        // console.log('--- Projection Calculations (Monthly Scale) Start ---');
 
         const labels = ['Current'];
         for (let i = 1; i <= projectionMonths; i++) {
@@ -83,7 +83,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
 
             const dataPoints = [startTotal];
 
-            console.log(`${module.name} start: $${currentTotal.toFixed(2)} | RAM Inf(m): ${working_ram_monthly.toFixed(2)}% | EMMC Inf(m): ${working_emmc_monthly.toFixed(2)}% | BOM(Other) Inf(m): ${moduleOtherMonthly.toFixed(2)}%`);
+            // console.log(`${module.name} start: $${currentTotal.toFixed(2)} | RAM Inf(m): ${working_ram_monthly.toFixed(2)}% | EMMC Inf(m): ${working_emmc_monthly.toFixed(2)}% | BOM(Other) Inf(m): ${moduleOtherMonthly.toFixed(2)}%`);
 
             for (let m = 1; m <= projectionMonths; m++) {
                 currentRam *= (1 + (working_ram_monthly || 0) / 100);
@@ -93,7 +93,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                 currentTotal = currentRam + currentEmmc + currentOther;
                 dataPoints.push(currentTotal);
 
-                console.log(`${module.name} M${m}: $${currentTotal.toFixed(2)} | RAM: ${(currentTotal > 0 ? (currentRam / currentTotal * 100) : 0).toFixed(1)}% | EMMC: ${(currentTotal > 0 ? (currentEmmc / currentTotal * 100) : 0).toFixed(1)}% | Other: ${(currentTotal > 0 ? (currentOther / currentTotal * 100) : 0).toFixed(1)}%`);
+                // console.log(`${module.name} M${m}: $${currentTotal.toFixed(2)} | RAM: ${(currentTotal > 0 ? (currentRam / currentTotal * 100) : 0).toFixed(1)}% | EMMC: ${(currentTotal > 0 ? (currentEmmc / currentTotal * 100) : 0).toFixed(1)}% | Other: ${(currentTotal > 0 ? (currentOther / currentTotal * 100) : 0).toFixed(1)}%`);
             }
 
             return {
@@ -108,7 +108,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
             };
         });
 
-        console.log('--- Projection Calculations End ---');
+        // console.log('--- Projection Calculations End ---');
 
         return {
             labels,
@@ -121,13 +121,19 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                position: 'bottom' as const,
+                position: 'right' as const,
                 labels: {
                     color: '#fff',
-                    font: { size: 10 },
                     // usePointStyle: true,
                     // pointStyle: 'line',
-                }
+                    usePointStyle: true,
+                    pointStyle: 'rect',
+                    padding: 20,
+                    font: {
+                        size: 14,
+                        family: "'Inter', sans-serif"
+                    }
+                },
             },
             tooltip: {
                 mode: 'index',
@@ -155,6 +161,9 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                 ticks: { color: '#888' }
             },
             y: {
+                afterDataLimits: (axis) => {
+                    axis.min = axis.min - 5;
+                },
                 grid: { color: 'rgba(255, 255, 255, 0.1)' },
                 ticks: {
                     color: '#888',
@@ -177,7 +186,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                     <span>EMMC <span className="text-blue">{emmc_inf ? `${emmc_inf.toFixed(2)}%` : 'N/A'}</span></span>
                     {breakdown_result.map(m => (
                         <span key={m.name}>
-                            {m.name} Residual <span className="text-blue">{parseFloat(m.otherMonthly).toFixed(2)}%</span>
+                            {m.name} Other <span className="text-blue">{parseFloat(m.otherMonthly).toFixed(2)}%</span>
                         </span>
                     ))}
                 </div>
@@ -214,7 +223,7 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
                     </div>
 
                     <div className="control-group d-flex align-items-center gap-2">
-                        <span className="filter-label">Residual</span>
+                        <span className="filter-label">Other</span>
                         <InputGroup size="sm" style={{ width: '110px' }}>
                             <Button variant="outline-secondary" size="sm" onClick={() => adjustDelta('bom', -0.5)}>-</Button>
                             <Form.Control

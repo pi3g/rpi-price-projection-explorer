@@ -7,7 +7,7 @@ const Overview: React.FC = () => {
             <Container>
                 <h1 className="placeholder-title mb-4">RPi Price Explorer</h1>
                 <p className="subtitle mb-5" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
-                    Welcome to the Raspberry Pi Pricing & Forecasting Tool. This dashboard allows you to analyze historical price trends of RPi modules, break down their bill of materials (BOM), and project future costs based on market shifts in DRAM and EMMC components.
+                    Welcome to the Raspberry Pi Pricing & Forecasting Tool. This dashboard allows you to analyze historical price trends of RPi modules, and project future costs based on market shifts in DRAM and EMMC components.
                 </p>
                 <p className="subtitle mb-5" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
                     This tool is intended for informational purposes only and does not constitute financial advice. All data is sourced from public sources and is subject to change. Use with caution.

@@ -61,8 +61,10 @@ function ComponentPrices({ selected_modules }: ComponentPricesProps) {
                 }
             }
         });
+        console.log(requiredChipsList);
 
         const datasets = requiredChipsList.map((chip, index) => {
+            console.log(chip);
             const chipData = chip_dataset.find(c =>
                 String(c.NAME).trim().toUpperCase() === String(chip.type).trim().toUpperCase() &&
                 Number(c.SIZE) === Number(chip.size)
@@ -75,7 +77,7 @@ function ComponentPrices({ selected_modules }: ComponentPricesProps) {
 
             const label = chip.type.toUpperCase() === 'EMMC'
                 ? `EMMC ${chip.size}GB`
-                : `${chip.type} ${chip.size}MB`;
+                : `${chip.type} ${chip.size}GB`;
 
             return {
                 label: label,
@@ -170,6 +172,9 @@ function ComponentPrices({ selected_modules }: ComponentPricesProps) {
                 }
             },
             y: {
+                afterDataLimits: (axis) => {
+                    axis.min = axis.min - 5;
+                },
                 grid: {
                     color: 'rgba(255, 255, 255, 0.1)'
                 },

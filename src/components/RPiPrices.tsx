@@ -36,7 +36,7 @@ interface PricesProps {
 function Prices({ setSelectedModules }: PricesProps) {
     const [hoveredDescription, setHoveredDescription] = useState<string | null>(null)
     const [family, setFamily] = useState<'Single Board Computer' | 'Compute Module'>('Compute Module')
-    const [selectedRam, setSelectedRam] = useState<number>(8192)
+    const [selectedRam, setSelectedRam] = useState<number>(8)
     const [selectedEmmc, setSelectedEmmc] = useState<number | null>(null)
     const [hiddenLabels, setHiddenLabels] = useState<Set<string>>(new Set())
 
@@ -66,7 +66,7 @@ function Prices({ setSelectedModules }: PricesProps) {
 
     // Reset RAM and EMMC to defaults when family changes
     useEffect(() => {
-        setSelectedRam(8192)
+        setSelectedRam(8)
         if (emmcOptions.length > 0) {
             setSelectedEmmc(emmcOptions[0])
         }
@@ -76,7 +76,7 @@ function Prices({ setSelectedModules }: PricesProps) {
     const currentSelection = useMemo(() => {
         const finalFiltered = familyFilteredDataset.filter((d: any) => d.RAM === selectedRam && d.EMMC === selectedEmmc)
         return finalFiltered.filter((item: any) => {
-            const label = `${item.NAME} (${item.RAM}MB / ${item.EMMC}GB)`
+            const label = `${item.NAME} (${item.RAM}GB / ${item.EMMC}GB)`
             return !hiddenLabels.has(label)
         })
     }, [familyFilteredDataset, selectedRam, selectedEmmc, hiddenLabels])
@@ -92,11 +92,11 @@ function Prices({ setSelectedModules }: PricesProps) {
             '#9966ff', '#c9cbcf', '#36a2eb', '#ff6384', '#4bc0c0'
         ]
 
-        const filtered = familyFilteredDataset.filter((d: any) => d.RAM === selectedRam && d.EMMC === selectedEmmc)
+        const filtered = familyFilteredDataset.filter((d: any) => d.RAM === (selectedRam) && d.EMMC === selectedEmmc)
 
         return {
             datasets: filtered.map((item: any, index: number) => {
-                const label = `${item.NAME} (${item.RAM}MB / ${item.EMMC}GB)`
+                const label = `${item.NAME} (${item.RAM}GB / ${item.EMMC}GB)`
                 return {
                     label: label,
                     data: item.USD.map((price: number | null, i: number) => ({
@@ -212,6 +212,9 @@ function Prices({ setSelectedModules }: PricesProps) {
                 }
             },
             y: {
+                afterDataLimits: (axis) => {
+                    axis.min = axis.min - 5;
+                },
                 grid: {
                     color: 'rgba(255, 255, 255, 0.1)'
                 },
@@ -256,14 +259,14 @@ function Prices({ setSelectedModules }: PricesProps) {
                         <span className="filter-label">RAM</span>
                         <DropdownButton
                             id="dropdown-ram"
-                            title={selectedRam ? `${selectedRam} MB` : 'Select RAM'}
+                            title={selectedRam ? `${selectedRam} GB` : 'Select RAM'}
                             variant="outline-primary"
-                            onSelect={(val: any) => setSelectedRam(parseInt(val))}
+                            onSelect={(val: any) => setSelectedRam(parseFloat(val))}
                             className="custom-dropdown"
                         >
                             {ramOptions.map((ram) => (
                                 <Dropdown.Item key={ram} eventKey={ram.toString()}>
-                                    {ram} MB
+                                    {ram} GB
                                 </Dropdown.Item>
                             ))}
                         </DropdownButton>
@@ -272,6 +275,7 @@ function Prices({ setSelectedModules }: PricesProps) {
                     <div className="filter-container">
                         <span className="filter-label">EMMC</span>
                         <DropdownButton
+                            disabled={family === 'Single Board Computer'}
                             id="dropdown-emmc"
                             title={selectedEmmc !== null ? `${selectedEmmc} GB` : 'Select EMMC'}
                             variant="outline-primary"

@@ -231,161 +231,165 @@ const Breakdown: React.FC<BreakdownProps> = ({ selected_modules, setRamInf, setE
             </div>
 
             <p className="subtitle mb-1">Inflation Breakdown by module and component for the selected period. Hover over headers and cells for more information.</p>
-            <div className="subtitle d-flex justify-content-center gap-4 mb-3" style={{ fontSize: '0.85rem' }}>
-                Share Legend:
-                <div className="d-flex align-items-center gap-1">
-                    <div style={{ width: '12px', height: '12px', backgroundColor: '#1b4965', borderRadius: '2px' }}></div>
-                    <span>RAM</span>
-                </div>
-                <div className="d-flex align-items-center gap-1">
-                    <div style={{ width: '12px', height: '12px', backgroundColor: '#62b6cb', borderRadius: '2px' }}></div>
-                    <span>EMMC</span>
-                </div>
-                <div className="d-flex align-items-center gap-1">
-                    <div style={{ width: '12px', height: '12px', backgroundColor: '#a1e0f0ff', borderRadius: '2px' }}></div>
-                    <span>Residual</span>
-                </div>
-            </div>
-            <div className="table-responsive">
-                <Table variant="dark" hover className="bom-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>The Raspberry Pi model name</Tooltip>}>
-                                    <span>Module</span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>Total module inflation over the selected period</Tooltip>}>
-                                    <span>Total</span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>RAM Inflation over selected period</Tooltip>}>
-                                    <span>RAM </span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>EMMC Inflation over selected period</Tooltip>}>
-                                    <span>EMMC </span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>Inflation of all other module components over the selected period</Tooltip>}>
-                                    <span>Residual </span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>Component weight at the start date</Tooltip>}>
-                                    <span>Start Share</span>
-                                </OverlayTrigger>
-                            </th>
-                            <th>
-                                <OverlayTrigger placement="top" overlay={<Tooltip>Component weight at the end date</Tooltip>}>
-                                    <span>End Share</span>
-                                </OverlayTrigger>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {tableData.map((row, idx) => (
-                            <tr key={idx}>
-                                <td>
-                                    <OverlayTrigger placement="top" overlay={<Tooltip>{row.ramType}</Tooltip>}>
-                                        <span>{row.name}</span>
-                                    </OverlayTrigger>
-                                </td>
-                                <td>
-                                    <OverlayTrigger placement="top" overlay={
-                                        <Tooltip>
-                                            MSRP (start/end):
-                                            <br />
-                                            {`$${row.totalStart} / $${row.totalEnd}`}
-                                            <br />
-                                            {`Monthly Inf.: ${row.totalMonthly}%`}
-                                        </Tooltip>
-                                    }>
-                                        <span className={parseFloat(row.totalInf) >= 0 ? 'text-pink' : 'text-emerald'}>
-                                            {parseFloat(row.totalInf) >= 0 ? '+' : ''}{row.totalInf}%
-                                        </span>
-                                    </OverlayTrigger>
-                                </td>
-                                <td>
-                                    <OverlayTrigger placement="top" overlay={
-                                        <Tooltip>
-                                            RAM (start/end):
-                                            <br />
-                                            {`$${row.ramStartCost} / $${row.ramEndCost}`}
-                                            <br />
-                                            {`Monthly Inf.: ${row.ramMonthly}%`}
-                                        </Tooltip>
-                                    }>
-                                        <span className={parseFloat(row.ramInf) >= 0 ? 'text-pink' : 'text-emerald'}>
-                                            {parseFloat(row.ramInf) >= 0 ? '+' : ''}{row.ramInf}%
-                                        </span>
-                                    </OverlayTrigger>
-                                </td>
-                                <td>
-                                    <OverlayTrigger placement="top" overlay={
-                                        <Tooltip>
-                                            {row.hasEmmc ? (
-                                                <>
-                                                    EMMC (start/end):
-                                                    <br />
-                                                    {`$${row.emmcStartCost} / $${row.emmcEndCost}`}
-                                                    <br />
-                                                    {`Monthly Inf.: ${row.emmcMonthly}%`}
-                                                </>
-                                            ) : 'No EMMC'}
-                                        </Tooltip>
-                                    }>
-                                        <span className={row.hasEmmc ? (parseFloat(row.emmcInf) >= 0 ? 'text-pink' : 'text-emerald') : ''}>
-                                            {row.hasEmmc ? `${parseFloat(row.emmcInf) >= 0 ? '+' : ''}${row.emmcInf}%` : '-'}
-                                        </span>
-                                    </OverlayTrigger>
-                                </td>
-                                <td className={parseFloat(row.otherInf) >= 0 ? 'text-pink' : 'text-emerald'}>
-                                    <OverlayTrigger
-                                        placement="top"
-                                        overlay={
-                                            <Tooltip>
-                                                Residual (start/end):
-                                                <br />
-                                                {`$${row.otherStart.toFixed(2)} / $${row.otherEnd.toFixed(2)}`}
-                                                <br />
-                                                {`Monthly Inf.: ${row.otherMonthly}%`}
-                                            </Tooltip>
-                                        }
-                                    >
-                                        <span>{parseFloat(row.otherInf) >= 0 ? '+' : ''}{row.otherInf}%</span>
-                                    </OverlayTrigger>
-                                </td>
-                                <td style={{ width: '15vw', maxWidth: '15vw' }}>
-                                    <StackedBarChart dataItems={[
-                                        { label: 'RAM', value: row.ramStart, color: '#1b4965' },
-                                        { label: 'EMMC', value: row.emmcStart, color: '#62b6cb' },
-                                        { label: 'Residual', value: row.otherStart, color: '#a1e0f0ff' }
-                                    ]} />
-                                </td>
-                                <td style={{ width: '15vw', maxWidth: '15vw' }}>
-                                    <StackedBarChart dataItems={[
-                                        { label: 'RAM', value: row.ramEnd, color: '#1b4965' },
-                                        { label: 'EMMC', value: row.emmcEnd, color: '#62b6cb' },
-                                        { label: 'Residual', value: row.otherEnd, color: '#a1e0f0ff' }
-                                    ]} />
-                                </td>
-                            </tr>
-                        ))}
-                        {tableData.length === 0 && (
+
+            <div className="d-flex mb-3 w-100 table-responsive">
+                <div className="table-responsive w-100">
+                    <Table variant="dark" hover className="bom-table">
+                        <thead>
                             <tr>
-                                <td colSpan={7} className="text-center py-4 text-muted">
-                                    No modules selected. Please choose modules on the first page.
-                                </td>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>The Raspberry Pi model name</Tooltip>}>
+                                        <span>Module</span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>Total module inflation over the selected period</Tooltip>}>
+                                        <span>MSRP</span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>RAM Inflation over selected period</Tooltip>}>
+                                        <span>RAM </span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>EMMC Inflation over selected period</Tooltip>}>
+                                        <span>EMMC </span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>Inflation of all other module components over the selected period</Tooltip>}>
+                                        <span>Other </span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>Component weight at the start date</Tooltip>}>
+                                        <span>Start Share</span>
+                                    </OverlayTrigger>
+                                </th>
+                                <th>
+                                    <OverlayTrigger placement="top" overlay={<Tooltip>Component weight at the end date</Tooltip>}>
+                                        <span>End Share</span>
+                                    </OverlayTrigger>
+                                </th>
                             </tr>
-                        )}
-                    </tbody>
-                </Table>
+                        </thead>
+                        <tbody>
+                            {tableData.map((row, idx) => (
+                                <tr key={idx}>
+                                    <td>
+                                        <OverlayTrigger placement="top" overlay={<Tooltip>{row.ramType}</Tooltip>}>
+                                            <span>{row.name}</span>
+                                        </OverlayTrigger>
+                                    </td>
+                                    <td>
+                                        <OverlayTrigger placement="top" overlay={
+                                            <Tooltip>
+                                                MSRP (start/end):
+                                                <br />
+                                                {`$${row.totalStart} / $${row.totalEnd}`}
+                                                <br />
+                                                {`Monthly Inf.: ${row.totalMonthly}%`}
+                                            </Tooltip>
+                                        }>
+                                            <span className={parseFloat(row.totalInf) >= 0 ? 'text-pink' : 'text-emerald'}>
+                                                {parseFloat(row.totalInf) >= 0 ? '+' : ''}{row.totalInf}%
+                                            </span>
+                                        </OverlayTrigger>
+                                    </td>
+                                    <td>
+                                        <OverlayTrigger placement="top" overlay={
+                                            <Tooltip>
+                                                RAM (start/end):
+                                                <br />
+                                                {`$${row.ramStartCost} / $${row.ramEndCost}`}
+                                                <br />
+                                                {`Monthly Inf.: ${row.ramMonthly}%`}
+                                            </Tooltip>
+                                        }>
+                                            <span className={parseFloat(row.ramInf) >= 0 ? 'text-pink' : 'text-emerald'}>
+                                                {parseFloat(row.ramInf) >= 0 ? '+' : ''}{row.ramInf}%
+                                            </span>
+                                        </OverlayTrigger>
+                                    </td>
+                                    <td>
+                                        <OverlayTrigger placement="top" overlay={
+                                            <Tooltip>
+                                                {row.hasEmmc ? (
+                                                    <>
+                                                        EMMC (start/end):
+                                                        <br />
+                                                        {`$${row.emmcStartCost} / $${row.emmcEndCost}`}
+                                                        <br />
+                                                        {`Monthly Inf.: ${row.emmcMonthly}%`}
+                                                    </>
+                                                ) : 'No EMMC'}
+                                            </Tooltip>
+                                        }>
+                                            <span className={row.hasEmmc ? (parseFloat(row.emmcInf) >= 0 ? 'text-pink' : 'text-emerald') : ''}>
+                                                {row.hasEmmc ? `${parseFloat(row.emmcInf) >= 0 ? '+' : ''}${row.emmcInf}%` : '-'}
+                                            </span>
+                                        </OverlayTrigger>
+                                    </td>
+                                    <td className={parseFloat(row.otherInf) >= 0 ? 'text-pink' : 'text-emerald'}>
+                                        <OverlayTrigger
+                                            placement="top"
+                                            overlay={
+                                                <Tooltip>
+                                                    Other (start/end):
+                                                    <br />
+                                                    {`$${row.otherStart.toFixed(2)} / $${row.otherEnd.toFixed(2)}`}
+                                                    <br />
+                                                    {`Monthly Inf.: ${row.otherMonthly}%`}
+                                                </Tooltip>
+                                            }
+                                        >
+                                            <span>{parseFloat(row.otherInf) >= 0 ? '+' : ''}{row.otherInf}%</span>
+                                        </OverlayTrigger>
+                                    </td>
+                                    <td style={{ width: '15vw', maxWidth: '15vw' }}>
+                                        <StackedBarChart dataItems={[
+                                            { label: 'RAM', value: row.ramStart, color: '#1b4965' },
+                                            { label: 'EMMC', value: row.emmcStart, color: '#62b6cb' },
+                                            { label: 'Other', value: row.otherStart, color: '#a1e0f0ff' }
+                                        ]} />
+                                    </td>
+                                    <td style={{ width: '15vw', maxWidth: '15vw' }}>
+                                        <StackedBarChart dataItems={[
+                                            { label: 'RAM', value: row.ramEnd, color: '#1b4965' },
+                                            { label: 'EMMC', value: row.emmcEnd, color: '#62b6cb' },
+                                            { label: 'Other', value: row.otherEnd, color: '#a1e0f0ff' }
+                                        ]} />
+                                    </td>
+                                </tr>
+                            ))}
+                            {tableData.length === 0 && (
+                                <tr>
+                                    <td colSpan={7} className="text-center py-4 text-muted">
+                                        No modules selected. Please choose modules on the first page.
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </Table>
+                </div>
+                {/* LEGEND */}
+                <div className="subtitle d-flex flex-column justify-content-center  align-items-left gap-3 mb-3" style={{ fontSize: '0.85rem' }}>
+                    <div className="d-flex align-items-center gap-1">
+                        <div style={{ width: '12px', height: '12px', backgroundColor: '#1b4965', borderRadius: '2px' }}></div>
+                        <span>RAM</span>
+                    </div>
+                    <div className="d-flex align-items-center gap-1">
+                        <div style={{ width: '12px', height: '12px', backgroundColor: '#62b6cb', borderRadius: '2px' }}></div>
+                        <span>EMMC</span>
+                    </div>
+                    <div className="d-flex align-items-center gap-1">
+                        <div style={{ width: '12px', height: '12px', backgroundColor: '#a1e0f0ff', borderRadius: '2px' }}></div>
+                        <span>Other</span>
+                    </div>
+                </div>
             </div>
+
 
             <div className="d-flex justify-content-center gap-4 flex-wrap mt-4">
                 <Card className="inflation-card">

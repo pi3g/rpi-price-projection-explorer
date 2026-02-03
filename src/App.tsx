@@ -5,6 +5,7 @@ import Prices from './components/RPiPrices'
 import ComponentPrices from './components/ComponentPrices'
 import Breakdown from './components/Breakdown'
 import Projections from './components/Projections'
+import Map from './components/Map'
 import './App.css'
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
     <ReactFullpage
       licenseKey={'OPEN-SOURCE-GPLV3-LICENSE'}
       credits={{ enabled: true, label: 'Fullpage.js', position: 'right' }}
-      scrollingSpeed={1000}
+      scrollingSpeed={500}
       navigation={true}
       navigationPosition={'right'}
       autoScrolling={true}
@@ -121,6 +122,23 @@ function App() {
                   onClick={() => fullpageApi.moveSectionUp()}
                 />
                 <Projections ram_inf={ram_inf} emmc_inf={emmc_inf} breakdown_result={breakdown_result} />
+                <NavArrow
+                  direction="down"
+                  label="Get yours now"
+                  onClick={() => fullpageApi.moveSectionDown()}
+                />
+              </div>
+            </div>
+
+            {/* Section 6: Map */}
+            <div className="section" data-anchor="map">
+              <div className="section-content flex-center">
+                <NavArrow
+                  direction="up"
+                  label="Projections"
+                  onClick={() => fullpageApi.moveSectionUp()}
+                />
+                <Map />
               </div>
             </div>
           </ReactFullpage.Wrapper>

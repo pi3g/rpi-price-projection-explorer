@@ -1,7 +1,7 @@
 [
   {
     "NAME": "CM3+",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -43,7 +43,7 @@
   },
   {
     "NAME": "CM3+",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -85,7 +85,7 @@
   },
   {
     "NAME": "CM3+",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -127,7 +127,7 @@
   },
   {
     "NAME": "CM3+",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -169,7 +169,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -211,7 +211,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -253,7 +253,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -295,7 +295,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -337,7 +337,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -379,7 +379,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -421,7 +421,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -463,7 +463,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -505,7 +505,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -547,7 +547,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -589,7 +589,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -631,7 +631,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -673,7 +673,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -715,7 +715,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -757,7 +757,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -799,7 +799,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -841,7 +841,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -883,7 +883,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -925,7 +925,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -967,7 +967,7 @@
   },
   {
     "NAME": "CM4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1009,7 +1009,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1051,7 +1051,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1093,7 +1093,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1135,7 +1135,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1177,7 +1177,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1219,7 +1219,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1261,7 +1261,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1303,7 +1303,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1345,7 +1345,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1387,7 +1387,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1429,7 +1429,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1471,7 +1471,7 @@
   },
   {
     "NAME": "CM4 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1513,7 +1513,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1555,7 +1555,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1597,7 +1597,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1639,7 +1639,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1681,7 +1681,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1723,7 +1723,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1765,7 +1765,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1807,7 +1807,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1849,7 +1849,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1891,7 +1891,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1933,7 +1933,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -1975,7 +1975,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -2017,7 +2017,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -2059,7 +2059,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 8,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -2101,7 +2101,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -2143,7 +2143,7 @@
   },
   {
     "NAME": "CM4S",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -2185,7 +2185,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2227,7 +2227,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2269,7 +2269,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2311,7 +2311,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2353,7 +2353,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2395,7 +2395,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2437,7 +2437,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2479,7 +2479,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2521,7 +2521,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2563,7 +2563,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2605,7 +2605,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2647,7 +2647,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2689,7 +2689,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2731,7 +2731,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2773,7 +2773,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2815,7 +2815,7 @@
   },
   {
     "NAME": "CM5",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2857,7 +2857,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2899,7 +2899,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2941,7 +2941,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -2983,7 +2983,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3025,7 +3025,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3067,7 +3067,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3109,7 +3109,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3151,7 +3151,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3193,7 +3193,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3235,7 +3235,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3277,7 +3277,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3319,7 +3319,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3361,7 +3361,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3403,7 +3403,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 16,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3445,7 +3445,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 32,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3487,7 +3487,7 @@
   },
   {
     "NAME": "CM5 WiFi",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 64,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3528,8 +3528,134 @@
     ]
   },
   {
+    "NAME": "Raspberry Pi 3 Model A+",
+    "RAM": 0.5,
+    "EMMC": 0,
+    "DRAM_TYPE": "LPDDR2",
+    "USD": [
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25
+    ],
+    "DATE": [
+      "2026-02-01",
+      "2026-01-01",
+      "2025-12-01",
+      "2025-11-01",
+      "2025-10-01",
+      "2025-09-01",
+      "2025-08-01",
+      "2025-07-01",
+      "2025-06-01",
+      "2025-05-01",
+      "2025-04-01",
+      "2025-03-01",
+      "2025-02-01",
+      "2025-01-01",
+      "2024-12-01",
+      "2024-11-01"
+    ]
+  },
+  {
+    "NAME": "Raspberry Pi 3 Model B V1.2",
+    "RAM": 1,
+    "EMMC": 0,
+    "DRAM_TYPE": "LPDDR2",
+    "USD": [
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35
+    ],
+    "DATE": [
+      "2026-02-01",
+      "2026-01-01",
+      "2025-12-01",
+      "2025-11-01",
+      "2025-10-01",
+      "2025-09-01",
+      "2025-08-01",
+      "2025-07-01",
+      "2025-06-01",
+      "2025-05-01",
+      "2025-04-01",
+      "2025-03-01",
+      "2025-02-01",
+      "2025-01-01",
+      "2024-12-01",
+      "2024-11-01"
+    ]
+  },
+  {
+    "NAME": "Raspberry Pi 3 Model B+",
+    "RAM": 1,
+    "EMMC": 0,
+    "DRAM_TYPE": "LPDDR2",
+    "USD": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35,
+      35
+    ],
+    "DATE": [
+      "2026-02-01",
+      "2026-01-01",
+      "2025-12-01",
+      "2025-11-01",
+      "2025-10-01",
+      "2025-09-01",
+      "2025-08-01",
+      "2025-07-01",
+      "2025-06-01",
+      "2025-05-01",
+      "2025-04-01",
+      "2025-03-01",
+      "2025-02-01",
+      "2025-01-01",
+      "2024-12-01",
+      "2024-11-01"
+    ]
+  },
+  {
     "NAME": "Raspberry Pi 4",
-    "RAM": 1024,
+    "RAM": 1,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -3571,7 +3697,7 @@
   },
   {
     "NAME": "Raspberry Pi 4",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -3613,7 +3739,7 @@
   },
   {
     "NAME": "Raspberry Pi 4",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -3655,7 +3781,7 @@
   },
   {
     "NAME": "Raspberry Pi 4 Rev 9",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4",
     "USD": [
@@ -3697,7 +3823,7 @@
   },
   {
     "NAME": "Raspberry Pi 5",
-    "RAM": 2048,
+    "RAM": 2,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3739,7 +3865,7 @@
   },
   {
     "NAME": "Raspberry Pi 5",
-    "RAM": 4096,
+    "RAM": 4,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3781,7 +3907,7 @@
   },
   {
     "NAME": "Raspberry Pi 5",
-    "RAM": 8192,
+    "RAM": 8,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3823,7 +3949,7 @@
   },
   {
     "NAME": "Raspberry Pi 5",
-    "RAM": 16384,
+    "RAM": 16,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR4X",
     "USD": [
@@ -3865,7 +3991,7 @@
   },
   {
     "NAME": "Raspberry Pi Zero (V1.3)",
-    "RAM": 512,
+    "RAM": 0.5,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -3907,7 +4033,7 @@
   },
   {
     "NAME": "Raspberry Pi Zero 2 W (new anti-stat bag)",
-    "RAM": 512,
+    "RAM": 0.5,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -3949,7 +4075,7 @@
   },
   {
     "NAME": "Raspberry Pi Zero 2 W with Header",
-    "RAM": 512,
+    "RAM": 0.5,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -3991,7 +4117,7 @@
   },
   {
     "NAME": "Raspberry Pi Zero W",
-    "RAM": 512,
+    "RAM": 0.5,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [
@@ -4033,7 +4159,7 @@
   },
   {
     "NAME": "Raspberry Pi Zero WH (With Pre-soldered GPIO Header)",
-    "RAM": 512,
+    "RAM": 0.5,
     "EMMC": 0,
     "DRAM_TYPE": "LPDDR2",
     "USD": [

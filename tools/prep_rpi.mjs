@@ -120,7 +120,7 @@ try {
 
         const entry = {
             NAME: values[nameIdx] || '',
-            RAM: parseInt(values[ramIdx]) || null,
+            RAM: parseInt(values[ramIdx]) / 1024 || null,
             EMMC: parseInt(values[emmcIdx]) === 0 ? 0 : (parseInt(values[emmcIdx]) || null),
             DRAM_TYPE: values[dramIdx] || '',
             USD: [],
@@ -149,7 +149,7 @@ try {
     }
 
     // filter out Pi 1,2,3
-    result = result.filter(entry => !entry.NAME.includes('Pi 1') && !entry.NAME.includes('Pi 2') && !entry.NAME.includes('Pi 3'));
+    result = result.filter(entry => !entry.NAME.includes('Pi 1') && !entry.NAME.includes('Pi 2'));
 
     result.sort((a, b) => {
         const nameA = a.NAME.toLowerCase();

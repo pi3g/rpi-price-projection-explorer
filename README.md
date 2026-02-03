@@ -1,5 +1,7 @@
 # RPi Pricing Tool
 
+This code is provided for demonstration purposes only. Datasets are provided for DRAM are fabricated. For updated DRAM and EMMC prices, please refer to the live tool at https://blog.pi3g.com/.
+
 ## Goal
 The **RPi Pricing Tool** is a dashboard designed to help users analyze historical pricing trends and project future costs for various Raspberry Pi models. It provides a granular look at how component price fluctuations (specifically RAM and EMMC) impact the overall Bills of Materials (BOM) and final market pricing.
 
