@@ -13,6 +13,7 @@ function App() {
   const [ram_inf, setRamInf] = useState<number>(0)
   const [emmc_inf, setEmmcInf] = useState<number>(0)
   const [breakdown_result, setBreakdownResult] = useState<any[]>([])
+  const [mapActive, setMapActive] = useState<boolean>(false)
 
   const NavArrow = ({ direction, label, onClick }: { direction: 'up' | 'down'; label: string; onClick: () => void }) => (
     <div className={`nav-arrow-container ${direction}`} onClick={onClick}>
@@ -125,7 +126,7 @@ function App() {
                 <NavArrow
                   direction="down"
                   label="Get yours now"
-                  onClick={() => fullpageApi.moveSectionDown()}
+                  onClick={() => { fullpageApi.moveSectionDown(); setMapActive(true) }}
                 />
               </div>
             </div>
@@ -138,7 +139,7 @@ function App() {
                   label="Projections"
                   onClick={() => fullpageApi.moveSectionUp()}
                 />
-                <Map />
+                <Map isActive={mapActive} />
               </div>
             </div>
           </ReactFullpage.Wrapper>

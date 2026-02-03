@@ -1,0 +1,505 @@
+[
+  {
+    "name": "Dzduino",
+    "country": "Algeria",
+    "site": "www.dzduino.com"
+  },
+  {
+    "name": "Core Electronics",
+    "country": "Australia",
+    "site": "www.core-electronics.com.au"
+  },
+  {
+    "name": "Little Bird Electronics",
+    "country": "Australia",
+    "site": "raspberry.piaustralia.com.au"
+  },
+  {
+    "name": "Semaf Electronics",
+    "country": "Austria",
+    "site": "electronics.semaf.at"
+  },
+  {
+    "name": "MC Hobby",
+    "country": "Belgium",
+    "site": "shop.mchobby.be"
+  },
+  {
+    "name": "Maker Hero",
+    "country": "Brazil",
+    "site": "www.makerhero.com"
+  },
+  {
+    "name": "RoboCore Tecnologia",
+    "country": "Brazil",
+    "site": "www.robocore.net"
+  },
+  {
+    "name": "CanaKit Corporation",
+    "country": "Canada",
+    "site": "www.canakit.com"
+  },
+  {
+    "name": "PiShop.ca",
+    "country": "Canada",
+    "site": "www.pishop.ca"
+  },
+  {
+    "name": "MCI Electronics",
+    "country": "Chile",
+    "site": "www.mcielectronics.cl"
+  },
+  {
+    "name": "Beijing Aiweiding Information Technology",
+    "country": "China",
+    "site": "www.bjivision.com"
+  },
+  {
+    "name": "Classroom Steam",
+    "country": "China",
+    "site": "www.classroomeshop.com"
+  },
+  {
+    "name": "Junroc",
+    "country": "China",
+    "site": "junpengsm.world.tmall.com"
+  },
+  {
+    "name": "Seeed Studio",
+    "country": "China",
+    "site": "www.seeed.cc"
+  },
+  {
+    "name": "Thingbits",
+    "country": "China",
+    "site": "www.thingbits.net"
+  },
+  {
+    "name": "Sigma Electrónica",
+    "country": "Colombia",
+    "site": "www.sigmaelectronica.net"
+  },
+  {
+    "name": "RPishop.cz",
+    "country": "Czech Republic",
+    "site": "www.rpishop.cz"
+  },
+  {
+    "name": "Jkollerup.dk",
+    "country": "Denmark",
+    "site": "www.raspberrypi.dk"
+  },
+  {
+    "name": "Kubii",
+    "country": "France",
+    "site": "www.kubii.com"
+  },
+  {
+    "name": "Yadom",
+    "country": "France",
+    "site": "www.yadom.eu"
+  },
+  {
+    "name": "pi3g",
+    "country": "Germany",
+    "site": "www.buyzero.de",
+    "phone": "+49 (0)341 392 858 42"
+  },
+  {
+    "name": "pi3g",
+    "country": "Austria",
+    "site": "www.buyzero.de",
+    "phone": "+49 (0)341 392 858 42"
+  },
+  {
+    "name": "pi3g",
+    "country": "Switzerland",
+    "site": "www.buyzero.de",
+    "phone": "+49 (0)341 392 858 42"
+  },
+  {
+    "name": "Astradis Elektronik",
+    "country": "Germany",
+    "site": "www.asdstore.de"
+  },
+  {
+    "name": "CJ-Elektronik",
+    "country": "Germany",
+    "site": "shop.funk24.net"
+  },
+  {
+    "name": "Ineltek",
+    "country": "Germany",
+    "site": "www.ineltek.com"
+  },
+  {
+    "name": "Mouser Electronics",
+    "country": "Germany",
+    "site": "www.mouser.com"
+  },
+  {
+    "name": "reichelt elektronik",
+    "country": "Germany",
+    "site": "www.reichelt.com"
+  },
+  {
+    "name": "Sertronics",
+    "country": "Germany",
+    "site": "www.berrybase.de"
+  },
+  {
+    "name": "S&H Werner",
+    "country": "Germany",
+    "site": "www.rasppishop.de"
+  },
+  {
+    "name": "Welectron",
+    "country": "Germany",
+    "site": "www.welectron.com"
+  },
+  {
+    "name": "DaakyeTech",
+    "country": "Ghana",
+    "site": "www.daakyetech.com"
+  },
+  {
+    "name": "Jumia",
+    "country": "Ghana",
+    "site": "www.jumia.com.gh"
+  },
+  {
+    "name": "TechTen Planet",
+    "country": "Ghana",
+    "site": "www.techtenplanet.org"
+  },
+  {
+    "name": "Nettop",
+    "country": "Greece",
+    "site": "www.nettop.gr"
+  },
+  {
+    "name": "Málna PC",
+    "country": "Hungary",
+    "site": "www.malnapc.hu"
+  },
+  {
+    "name": "rPI Bolt",
+    "country": "Hungary",
+    "site": "www.rpibolt.hu"
+  },
+  {
+    "name": "Robocraze",
+    "country": "India",
+    "site": "www.robocraze.com"
+  },
+  {
+    "name": "Robu.in",
+    "country": "India",
+    "site": "www.robu.in"
+  },
+  {
+    "name": "Silverline Electronics",
+    "country": "India",
+    "site": "www.silverlineelectronics.in"
+  },
+  {
+    "name": "Piitel",
+    "country": "Israel",
+    "site": "www.piitel.co.il"
+  },
+  {
+    "name": "Melopero",
+    "country": "Italy",
+    "site": "www.melopero.com"
+  },
+  {
+    "name": "Baks",
+    "country": "Japan",
+    "site": "www.icbroker-japan.com"
+  },
+  {
+    "name": "KSY",
+    "country": "Japan",
+    "site": "raspberry-pi.ksyic.com"
+  },
+  {
+    "name": "Switch Science",
+    "country": "Japan",
+    "site": "www.switch-science.com"
+  },
+  {
+    "name": "Ivyliam Gadgets",
+    "country": "Kenya",
+    "site": "shop.ivyliam.com"
+  },
+  {
+    "name": "Electronic-Shop",
+    "country": "Luxembourg",
+    "site": "www.electronic-shop.lu"
+  },
+  {
+    "name": "Autobotic",
+    "country": "Malaysia",
+    "site": "www.autobotic.com.my"
+  },
+  {
+    "name": "Cytron",
+    "country": "Malaysia",
+    "site": "www.cytron.io"
+  },
+  {
+    "name": "330ohms",
+    "country": "Mexico",
+    "site": "www.330ohms.com"
+  },
+  {
+    "name": "AG Electrónica",
+    "country": "Mexico",
+    "site": "www.agelectronica.com"
+  },
+  {
+    "name": "Geek Factory",
+    "country": "Mexico",
+    "site": "www.geekfactory.mx"
+  },
+  {
+    "name": "Robox",
+    "country": "Morocco",
+    "site": "www.robox.ma"
+  },
+  {
+    "name": "PB Tech",
+    "country": "New Zealand",
+    "site": "www.pbtech.co.nz"
+  },
+  {
+    "name": "STEMCafe",
+    "country": "Nigeria",
+    "site": "shop.stemcafe.io"
+  },
+  {
+    "name": "Swift Berry",
+    "country": "Nigeria",
+    "site": "www.swiftberry.ng"
+  },
+  {
+    "name": "Generación Tec",
+    "country": "Peru",
+    "site": "www.thepibox.pe"
+  },
+  {
+    "name": "Argon Forty",
+    "country": "Philippines",
+    "site": "www.argon40.com"
+  },
+  {
+    "name": "Botland",
+    "country": "Poland",
+    "site": "www.botland.store"
+  },
+  {
+    "name": "Kamami",
+    "country": "Poland",
+    "site": "www.kamami.pl"
+  },
+  {
+    "name": "Robert Mauser",
+    "country": "Portugal",
+    "site": "www.mauser.pt"
+  },
+  {
+    "name": "Optimus Digital",
+    "country": "Romania",
+    "site": "www.optimusdigital.ro"
+  },
+  {
+    "name": "Nyereka Tech",
+    "country": "Rwanda",
+    "site": "www.nyerekatech.com"
+  },
+  {
+    "name": "Geeks Valley",
+    "country": "Saudi Arabia",
+    "site": "www.geeksvalley.com"
+  },
+  {
+    "name": "Galago",
+    "country": "Slovenia",
+    "site": "www.galagomarket.com"
+  },
+  {
+    "name": "PiShop",
+    "country": "South Africa",
+    "site": "www.pishop.co.za"
+  },
+  {
+    "name": "Eleparts",
+    "country": "South Korea",
+    "site": "www.eleparts.co.kr"
+  },
+  {
+    "name": "Leocom",
+    "country": "South Korea",
+    "site": "www.leocom.kr"
+  },
+  {
+    "name": "Ntrex",
+    "country": "South Korea",
+    "site": "www.devicemart.co.kr"
+  },
+  {
+    "name": "AP Tecnología",
+    "country": "Spain",
+    "site": "www.raspipc.es"
+  },
+  {
+    "name": "tiendatec",
+    "country": "Spain",
+    "site": "www.tiendatec.es"
+  },
+  {
+    "name": "Elektrokit",
+    "country": "Sweden",
+    "site": "www.electrokit.com"
+  },
+  {
+    "name": "EducaWeb.ch",
+    "country": "Switzerland",
+    "site": "www.educaweb.ch"
+  },
+  {
+    "name": "Totonic",
+    "country": "Switzerland",
+    "site": "www.pi-shop.ch"
+  },
+  {
+    "name": "Ricelee",
+    "country": "Taiwan",
+    "site": "www.ricelee.com"
+  },
+  {
+    "name": "Elektor",
+    "country": "The Netherlands",
+    "site": "www.elektor.com"
+  },
+  {
+    "name": "Elektronica Voor Jou",
+    "country": "The Netherlands",
+    "site": "www.elektronicavoorjou.nl"
+  },
+  {
+    "name": "Kiwi Electronics",
+    "country": "The Netherlands",
+    "site": "www.kiwi-electronics.com"
+  },
+  {
+    "name": "Raspberry Store",
+    "country": "The Netherlands",
+    "site": "www.raspberrystore.nl"
+  },
+  {
+    "name": "SAMM Teknoloji",
+    "country": "Turkey",
+    "site": "www.samm.com"
+  },
+  {
+    "name": "BCD-Atlantik",
+    "country": "United Kingdom",
+    "site": "www.bcdatlantik.shop"
+  },
+  {
+    "name": "Cool Components",
+    "country": "United Kingdom",
+    "site": "www.coolcomponents.co.United Kingdom"
+  },
+  {
+    "name": "CPC",
+    "country": "United Kingdom",
+    "site": "www.cpc.farnell.com"
+  },
+  {
+    "name": "element14",
+    "country": "United Kingdom",
+    "site": "community.element14.com"
+  },
+  {
+    "name": "Farnell",
+    "country": "United Kingdom",
+    "site": "www.farnell.com"
+  },
+  {
+    "name": "Kitronik",
+    "country": "United Kingdom",
+    "site": "www.kitronik.co.United Kingdom"
+  },
+  {
+    "name": "Pimoroni",
+    "country": "United Kingdom",
+    "site": "shop.pimoroni.com"
+  },
+  {
+    "name": "Rapid",
+    "country": "United Kingdom",
+    "site": "www.rapidonline.com"
+  },
+  {
+    "name": "Raspberry Pi Direct",
+    "country": "United Kingdom",
+    "site": "direct.raspberrypi.com"
+  },
+  {
+    "name": "The Pi Hut",
+    "country": "United Kingdom",
+    "site": "www.thepihut.com"
+  },
+  {
+    "name": "Adafruit",
+    "country": "United States",
+    "site": "www.adafruit.com"
+  },
+  {
+    "name": "Central Computers",
+    "country": "United States",
+    "site": "www.centralcomputer.com"
+  },
+  {
+    "name": "Chicago Electronic Distributors",
+    "country": "United States",
+    "site": "www.chicagodist.com"
+  },
+  {
+    "name": "DigiKey",
+    "country": "United States",
+    "site": "www.digikey.com"
+  },
+  {
+    "name": "Maker Bright",
+    "country": "United States",
+    "site": "www.makerbright.com"
+  },
+  {
+    "name": "Micro Electronics",
+    "country": "United States",
+    "site": "www.microcenter.com"
+  },
+  {
+    "name": "Newark Electronics",
+    "country": "United States",
+    "site": "www.newark.com"
+  },
+  {
+    "name": "PiShop.us",
+    "country": "United States",
+    "site": "www.pishop.us"
+  },
+  {
+    "name": "SparkFun",
+    "country": "United States",
+    "site": "www.sparkfun.com"
+  },
+  {
+    "name": "Vilros",
+    "country": "United States",
+    "site": "www.vilros.com"
+  }
+]
