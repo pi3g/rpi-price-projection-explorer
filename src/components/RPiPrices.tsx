@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -14,8 +14,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import 'chartjs-adapter-date-fns'
-import { Dropdown, DropdownButton } from 'react-bootstrap'
-import rpi_dataset from '../assets/dataset_rpi.json'
+import ModuleFilter from './module_filter'
 
 // Register ChartJS components including TimeScale
 ChartJS.register(
@@ -31,60 +30,43 @@ ChartJS.register(
 
 interface PricesProps {
     setSelectedModules: (items: any[]) => void;
+    family: 'Single Board Computer' | 'Compute Module';
+    setFamily: (val: 'Single Board Computer' | 'Compute Module') => void;
+    selectedRam: number;
+    setSelectedRam: (val: number) => void;
+    selectedEmmc: number | null;
+    setSelectedEmmc: (val: number | null) => void;
 }
 
-function Prices({ setSelectedModules }: PricesProps) {
-    const [hoveredDescription, setHoveredDescription] = useState<string | null>(null)
-    const [family, setFamily] = useState<'Single Board Computer' | 'Compute Module'>('Compute Module')
-    const [selectedRam, setSelectedRam] = useState<number>(8)
-    const [selectedEmmc, setSelectedEmmc] = useState<number | null>(null)
-    const [hiddenLabels, setHiddenLabels] = useState<Set<string>>(new Set())
+function Prices({
+    setSelectedModules,
+    family,
+    setFamily,
+    selectedRam,
+    setSelectedRam,
+    selectedEmmc,
+    setSelectedEmmc
+}: PricesProps) {
+    const [hoveredDescription, setHoveredDescription] = useState<string | null>(null);
+    const [selectedModules, setSelectedModulesLocal] = useState<any[]>([]);
+    const [hiddenLabels, setHiddenLabels] = useState<Set<string>>(new Set());
 
-    const familyFilteredDataset = useMemo(() => {
-        if (family === 'Single Board Computer') {
-            return rpi_dataset.filter((d: any) => d.NAME.includes('Pi '))
-        } else {
-            return rpi_dataset.filter((d: any) => d.NAME.includes('CM'))
-        }
-    }, [family])
+    const handleFilterChange = useCallback((modules: any[]) => {
+        setSelectedModulesLocal(modules);
+        setHiddenLabels(new Set()); // Reset legend visibility when filters change
+    }, []);
 
-    const ramOptions = useMemo(() => {
-        const rams = new Set<number>()
-        familyFilteredDataset.forEach((item: any) => {
-            if (item.RAM !== null) rams.add(item.RAM)
-        })
-        return Array.from(rams).sort((a, b) => a - b)
-    }, [familyFilteredDataset])
-
-    const emmcOptions = useMemo(() => {
-        const emmcs = new Set<number>()
-        familyFilteredDataset.forEach((item: any) => {
-            if (item.EMMC !== null) emmcs.add(item.EMMC)
-        })
-        return Array.from(emmcs).sort((a, b) => a - b)
-    }, [familyFilteredDataset])
-
-    // Reset RAM and EMMC to defaults when family changes
-    useEffect(() => {
-        setSelectedRam(8)
-        if (emmcOptions.length > 0) {
-            setSelectedEmmc(emmcOptions[0])
-        }
-        setHiddenLabels(new Set()) // Reset legend visibility
-    }, [family, emmcOptions])
-
-    const currentSelection = useMemo(() => {
-        const finalFiltered = familyFilteredDataset.filter((d: any) => d.RAM === selectedRam && d.EMMC === selectedEmmc)
-        return finalFiltered.filter((item: any) => {
+    const currentlyVisibleModules = useMemo(() => {
+        return selectedModules.filter((item: any) => {
             const label = `${item.NAME} (${item.RAM}GB / ${item.EMMC}GB)`
             return !hiddenLabels.has(label)
         })
-    }, [familyFilteredDataset, selectedRam, selectedEmmc, hiddenLabels])
+    }, [selectedModules, hiddenLabels]);
 
-    // Update parent whenever selection changes
+    // Update parent whenever visible selection changes
     useEffect(() => {
-        setSelectedModules(currentSelection)
-    }, [currentSelection, setSelectedModules])
+        setSelectedModules(currentlyVisibleModules)
+    }, [currentlyVisibleModules, setSelectedModules])
 
     const chartData: ChartData<'line'> = useMemo(() => {
         const colors = [
@@ -92,10 +74,8 @@ function Prices({ setSelectedModules }: PricesProps) {
             '#9966ff', '#c9cbcf', '#36a2eb', '#ff6384', '#4bc0c0'
         ]
 
-        const filtered = familyFilteredDataset.filter((d: any) => d.RAM === (selectedRam) && d.EMMC === selectedEmmc)
-
         return {
-            datasets: filtered.map((item: any, index: number) => {
+            datasets: selectedModules.map((item: any, index: number) => {
                 const label = `${item.NAME} (${item.RAM}GB / ${item.EMMC}GB)`
                 return {
                     label: label,
@@ -108,12 +88,12 @@ function Prices({ setSelectedModules }: PricesProps) {
                     tension: 0,
                     pointRadius: 4,
                     pointHoverRadius: 6,
-                    description: `${item.NAME} ${item.DRAM_TYPE}`,
+                    description: `${item.NAME} · ${item.DRAM_TYPE} · SKU: ${item.SKU} EAN:${item.EAN}`,
                     hidden: hiddenLabels.has(label)
                 }
             })
         }
-    }, [familyFilteredDataset, selectedRam, selectedEmmc, hiddenLabels])
+    }, [selectedModules, hiddenLabels])
 
     const options: ChartOptions<'line'> = {
         responsive: true,
@@ -240,56 +220,15 @@ function Prices({ setSelectedModules }: PricesProps) {
         <div className="prices-inner-container">
             <div className="header-container">
                 <h1 className="main-title mb-3">RPi Prices</h1>
-                <div className="filter-row-top">
-                    <div className="filter-container">
-                        <span className="filter-label">Family</span>
-                        <DropdownButton
-                            id="dropdown-family"
-                            title={family}
-                            variant="outline-primary"
-                            onSelect={(val: any) => setFamily(val)}
-                            className="custom-dropdown"
-                        >
-                            <Dropdown.Item eventKey="Single Board Computer">Single Board Computer</Dropdown.Item>
-                            <Dropdown.Item eventKey="Compute Module">Compute Module</Dropdown.Item>
-                        </DropdownButton>
-                    </div>
-
-                    <div className="filter-container">
-                        <span className="filter-label">RAM</span>
-                        <DropdownButton
-                            id="dropdown-ram"
-                            title={selectedRam ? `${selectedRam} GB` : 'Select RAM'}
-                            variant="outline-primary"
-                            onSelect={(val: any) => setSelectedRam(parseFloat(val))}
-                            className="custom-dropdown"
-                        >
-                            {ramOptions.map((ram) => (
-                                <Dropdown.Item key={ram} eventKey={ram.toString()}>
-                                    {ram} GB
-                                </Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                    </div>
-
-                    <div className="filter-container">
-                        <span className="filter-label">EMMC</span>
-                        <DropdownButton
-                            disabled={family === 'Single Board Computer'}
-                            id="dropdown-emmc"
-                            title={selectedEmmc !== null ? `${selectedEmmc} GB` : 'Select EMMC'}
-                            variant="outline-primary"
-                            onSelect={(val: any) => setSelectedEmmc(parseInt(val))}
-                            className="custom-dropdown"
-                        >
-                            {emmcOptions.map((emmc) => (
-                                <Dropdown.Item key={emmc} eventKey={emmc.toString()}>
-                                    {emmc} GB
-                                </Dropdown.Item>
-                            ))}
-                        </DropdownButton>
-                    </div>
-                </div>
+                <ModuleFilter
+                    onSelectionChange={handleFilterChange}
+                    family={family}
+                    setFamily={setFamily}
+                    selectedRam={selectedRam}
+                    setSelectedRam={setSelectedRam}
+                    selectedEmmc={selectedEmmc}
+                    setSelectedEmmc={setSelectedEmmc}
+                />
             </div>
 
             <div className="chart-wrapper">

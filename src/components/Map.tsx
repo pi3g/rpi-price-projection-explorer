@@ -82,7 +82,7 @@ const Map: React.FC<MapProps> = ({ isActive }) => {
     return (
         <div className="map-inner-container w-100 flex-column d-flex align-items-center justify-content-center" style={{ marginTop: '2rem' }}>
             <div className="resellers-header mb-0 text-center">
-                <h1 className="main-title mb-1" style={{ fontSize: '3rem', fontWeight: 'bold' }}>Resellers </h1>
+                <h1 className="main-title mb-1" style={{ fontSize: '2rem', fontWeight: 'bold' }}>Resellers </h1>
                 <p className="subtitle" style={{ fontSize: '1rem', color: '#888', opacity: 0.8 }}>
                     {tooltipContent || "Click on a country for local resellers"}
                 </p>
@@ -207,7 +207,7 @@ const Map: React.FC<MapProps> = ({ isActive }) => {
                     max-height: 65vh; /* Increased slightly to balance overflow vs cut-off */
                 }
                 .map-wrapper path {
-                    fill: #222;
+                    fill: #444;
                     stroke: #111;
                     stroke-width: 0.3;
                     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -220,7 +220,7 @@ const Map: React.FC<MapProps> = ({ isActive }) => {
                     z-index: 10;
                 }
                 .main-title {
-                    background: linear-gradient(to right, #fff, #999);
+                    background: #fff;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }

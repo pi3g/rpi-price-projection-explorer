@@ -13,6 +13,7 @@ import {
     type ChartData
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import ModuleFilter from './module_filter';
 
 // Register ChartJS components
 ChartJS.register(
@@ -29,9 +30,27 @@ interface ProjectionsProps {
     ram_inf: number;
     emmc_inf: number;
     breakdown_result: any[];
+    setSelectedModules: (modules: any[]) => void;
+    family: 'Single Board Computer' | 'Compute Module';
+    setFamily: (val: 'Single Board Computer' | 'Compute Module') => void;
+    selectedRam: number;
+    setSelectedRam: (val: number) => void;
+    selectedEmmc: number | null;
+    setSelectedEmmc: (val: number | null) => void;
 }
 
-const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_result }) => {
+const Projections: React.FC<ProjectionsProps> = ({
+    ram_inf,
+    emmc_inf,
+    breakdown_result,
+    setSelectedModules,
+    family,
+    setFamily,
+    selectedRam,
+    setSelectedRam,
+    selectedEmmc,
+    setSelectedEmmc
+}) => {
     // Project for 12 months (one year)
     const projectionMonths = 12;
 
@@ -176,7 +195,16 @@ const Projections: React.FC<ProjectionsProps> = ({ ram_inf, emmc_inf, breakdown_
     return (
         <div className="projections-container" style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div className="header-container text-center">
-                <h1 className="main-title">Price Projection</h1>
+                <h1 className="main-title mb-4">Price Projection</h1>
+                <ModuleFilter
+                    onSelectionChange={setSelectedModules}
+                    family={family}
+                    setFamily={setFamily}
+                    selectedRam={selectedRam}
+                    setSelectedRam={setSelectedRam}
+                    selectedEmmc={selectedEmmc}
+                    setSelectedEmmc={setSelectedEmmc}
+                />
             </div>
 
             <div className="projection-controls d-flex flex-column align-items-center gap-2 mt-2">

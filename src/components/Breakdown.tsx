@@ -3,17 +3,37 @@ import { Dropdown, DropdownButton, Table, Card, OverlayTrigger, Tooltip } from '
 import chip_dataset from '../assets/dataset_chips.json';
 import rpi_dataset from '../assets/dataset_rpi.json';
 import StackedBarChart from './StackedBarChart';
+import ModuleFilter from './module_filter';
 
 interface BreakdownProps {
     selected_modules: any[];
+    setSelectedModules: (modules: any[]) => void;
     ram_inf: number;
     emmc_inf: number;
     setRamInf: (val: number) => void;
     setEmmcInf: (val: number) => void;
     setBreakdownResult: (val: any[]) => void;
+    family: 'Single Board Computer' | 'Compute Module';
+    setFamily: (val: 'Single Board Computer' | 'Compute Module') => void;
+    selectedRam: number;
+    setSelectedRam: (val: number) => void;
+    selectedEmmc: number | null;
+    setSelectedEmmc: (val: number | null) => void;
 }
 
-const Breakdown: React.FC<BreakdownProps> = ({ selected_modules, setRamInf, setEmmcInf, setBreakdownResult }) => {
+const Breakdown: React.FC<BreakdownProps> = ({
+    selected_modules,
+    setSelectedModules,
+    setRamInf,
+    setEmmcInf,
+    setBreakdownResult,
+    family,
+    setFamily,
+    selectedRam,
+    setSelectedRam,
+    selectedEmmc,
+    setSelectedEmmc
+}) => {
     // Get available dates and sort chronologically for range logic
     const availableDates = useMemo(() => {
         if (!rpi_dataset[0] || !rpi_dataset[0].DATE) return [];
@@ -196,8 +216,17 @@ const Breakdown: React.FC<BreakdownProps> = ({ selected_modules, setRamInf, setE
     return (
         <div className="breakdown-container">
             <div className="breakdown-header text-center">
-                <h1 className="main-title">Inflation Breakdown</h1>
-                <div className="d-flex justify-content-center align-items-center gap-2 mt-3 flex-wrap">
+                <h1 className="main-title mb-4">Inflation Breakdown</h1>
+                <ModuleFilter
+                    onSelectionChange={setSelectedModules}
+                    family={family}
+                    setFamily={setFamily}
+                    selectedRam={selectedRam}
+                    setSelectedRam={setSelectedRam}
+                    selectedEmmc={selectedEmmc}
+                    setSelectedEmmc={setSelectedEmmc}
+                />
+                <div className="d-flex justify-content-center align-items-center gap-2 mt-4 flex-wrap">
 
                     <span className="filter-label">ANALYZE YoY from</span>
                     <DropdownButton

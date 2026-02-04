@@ -69,6 +69,8 @@ try {
     const ramIdx = headers.indexOf('RAM (MB)');
     const emmcIdx = headers.indexOf('eMMC (GB)');
     const dramIdx = headers.indexOf('DRAM');
+    const skuIdx = headers.indexOf('SKU');
+    const eanIdx = headers.indexOf('EAN');
 
     const dateMapping = [];
     for (let i = 0; i < headers.length; i++) {
@@ -123,6 +125,8 @@ try {
             RAM: parseInt(values[ramIdx]) / 1024 || null,
             EMMC: parseInt(values[emmcIdx]) === 0 ? 0 : (parseInt(values[emmcIdx]) || null),
             DRAM_TYPE: values[dramIdx] || '',
+            SKU: values[skuIdx] || '',
+            EAN: values[eanIdx] || '',
             USD: [],
             DATE: []
         };

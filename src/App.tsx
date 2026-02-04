@@ -15,6 +15,11 @@ function App() {
   const [breakdown_result, setBreakdownResult] = useState<any[]>([])
   const [mapActive, setMapActive] = useState<boolean>(false)
 
+  // Synced Filter State
+  const [family, setFamily] = useState<'Single Board Computer' | 'Compute Module'>('Compute Module')
+  const [selectedRam, setSelectedRam] = useState<number>(8)
+  const [selectedEmmc, setSelectedEmmc] = useState<number | null>(null)
+
   const NavArrow = ({ direction, label, onClick }: { direction: 'up' | 'down'; label: string; onClick: () => void }) => (
     <div className={`nav-arrow-container ${direction}`} onClick={onClick}>
       <span className="nav-label">{label}</span>
@@ -62,7 +67,15 @@ function App() {
                   label="Overview"
                   onClick={() => fullpageApi.moveSectionUp()}
                 />
-                <Prices setSelectedModules={setSelectedModules} />
+                <Prices
+                  setSelectedModules={setSelectedModules}
+                  family={family}
+                  setFamily={setFamily}
+                  selectedRam={selectedRam}
+                  setSelectedRam={setSelectedRam}
+                  selectedEmmc={selectedEmmc}
+                  setSelectedEmmc={setSelectedEmmc}
+                />
                 <NavArrow
                   direction="down"
                   label="Component Prices"
@@ -81,6 +94,13 @@ function App() {
                 />
                 <ComponentPrices
                   selected_modules={selected_modules}
+                  setSelectedModules={setSelectedModules}
+                  family={family}
+                  setFamily={setFamily}
+                  selectedRam={selectedRam}
+                  setSelectedRam={setSelectedRam}
+                  selectedEmmc={selectedEmmc}
+                  setSelectedEmmc={setSelectedEmmc}
                 />
                 <NavArrow
                   direction="down"
@@ -100,11 +120,18 @@ function App() {
                 />
                 <Breakdown
                   selected_modules={selected_modules}
+                  setSelectedModules={setSelectedModules}
                   ram_inf={ram_inf}
                   emmc_inf={emmc_inf}
                   setRamInf={setRamInf}
                   setEmmcInf={setEmmcInf}
                   setBreakdownResult={setBreakdownResult}
+                  family={family}
+                  setFamily={setFamily}
+                  selectedRam={selectedRam}
+                  setSelectedRam={setSelectedRam}
+                  selectedEmmc={selectedEmmc}
+                  setSelectedEmmc={setSelectedEmmc}
                 />
                 <NavArrow
                   direction="down"
@@ -122,7 +149,18 @@ function App() {
                   label="Breakdown"
                   onClick={() => fullpageApi.moveSectionUp()}
                 />
-                <Projections ram_inf={ram_inf} emmc_inf={emmc_inf} breakdown_result={breakdown_result} />
+                <Projections
+                  ram_inf={ram_inf}
+                  emmc_inf={emmc_inf}
+                  breakdown_result={breakdown_result}
+                  setSelectedModules={setSelectedModules}
+                  family={family}
+                  setFamily={setFamily}
+                  selectedRam={selectedRam}
+                  setSelectedRam={setSelectedRam}
+                  selectedEmmc={selectedEmmc}
+                  setSelectedEmmc={setSelectedEmmc}
+                />
                 <NavArrow
                   direction="down"
                   label="Get yours now"

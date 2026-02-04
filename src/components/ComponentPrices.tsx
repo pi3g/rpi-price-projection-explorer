@@ -15,6 +15,7 @@ import {
 import { Line } from 'react-chartjs-2'
 import 'chartjs-adapter-date-fns'
 import chip_dataset from '../assets/dataset_chips.json'
+import ModuleFilter from './module_filter'
 
 // Register ChartJS components including TimeScale
 ChartJS.register(
@@ -30,10 +31,27 @@ ChartJS.register(
 
 interface ComponentPricesProps {
     selected_modules: any[];
+    setSelectedModules: (modules: any[]) => void;
+    family: 'Single Board Computer' | 'Compute Module';
+    setFamily: (val: 'Single Board Computer' | 'Compute Module') => void;
+    selectedRam: number;
+    setSelectedRam: (val: number) => void;
+    selectedEmmc: number | null;
+    setSelectedEmmc: (val: number | null) => void;
 }
 
-function ComponentPrices({ selected_modules }: ComponentPricesProps) {
+function ComponentPrices({
+    selected_modules,
+    setSelectedModules,
+    family,
+    setFamily,
+    selectedRam,
+    setSelectedRam,
+    selectedEmmc,
+    setSelectedEmmc
+}: ComponentPricesProps) {
     const chartData = useMemo(() => {
+        // ... existing chartData logic ...
         const colors = [
             '#646cff', '#ff64b0', '#42b883', '#ffcd56', '#ff9f40',
             '#9966ff', '#c9cbcf', '#36a2eb', '#ff6384', '#4bc0c0'
@@ -199,8 +217,17 @@ function ComponentPrices({ selected_modules }: ComponentPricesProps) {
     return (
         <div className="prices-inner-container">
             <div className="header-container">
-                <h1 className="main-title">Component Prices</h1>
-                <p>The price of the components used in the {selected_modules.length} selected modules.</p>
+                <h1 className="main-title mb-3">Component Prices</h1>
+                <ModuleFilter
+                    onSelectionChange={setSelectedModules}
+                    family={family}
+                    setFamily={setFamily}
+                    selectedRam={selectedRam}
+                    setSelectedRam={setSelectedRam}
+                    selectedEmmc={selectedEmmc}
+                    setSelectedEmmc={setSelectedEmmc}
+                />
+                <p className="mt-3">The market price of the components used in the selected modules.</p>
             </div>
 
             <div className="chart-wrapper">
